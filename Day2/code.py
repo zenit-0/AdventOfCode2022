@@ -8,7 +8,7 @@ Created on Sat Dec  3 19:55:09 2022
 import numpy as np
 
 #initialize
-input = np.loadtxt("input2.txt", dtype='str')
+input = np.loadtxt("input.txt", dtype='str')
 score = 0
 i = 0
 
