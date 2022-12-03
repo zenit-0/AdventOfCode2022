@@ -23,6 +23,7 @@ for i in np.arange(0,input.size,1):
         
 #find highest value in array
 highest_value = np.max(final)
+print(highest_value)
 
 #sort array
 sorted_final = np.sort(final)
@@ -30,3 +31,4 @@ sorted_final = np.sort(final)
 #sum top elements
 top = 3
 result = np.sum(sorted_final[sorted_final.size-(top):])
+print(result)
