@@ -2,13 +2,13 @@
 """
 Created on Sun Dec  4 08:50:58 2022
 
-@author: zenit-0
+@author: gbald
 """
 
 import numpy as np
 
 #initialize
-data = np.loadtxt("data.txt", dtype='str')
+data = np.loadtxt("input.txt", dtype='str')
 split_data = np.zeros((len(data),2), dtype='object')
 result = np.zeros(len(data), dtype='str')
 priority_sum = 0
@@ -19,7 +19,7 @@ for i in np.arange(0,data.size,1):
     split_data[i,0] = data[i][0:lenght//2]
     split_data[i,1] = data[i][lenght//2:]
 
-#scan halfstrings for equal item
+#scan half strings for equal item
 for i in np.arange(0,data.size,1):
     lenght = int(len(data[i])/2)
     for j in np.arange(0,lenght,1):
@@ -37,3 +37,27 @@ value_scores = {'a':1, 	'b':2, 	'c':3, 	'd':4, 	'e':5, 	'f':6, 	'g':7, 	'h':8, 	
 for i in np.arange(0,data.size,1):
     priority_sum = priority_sum + value_scores[result[i]]
 print(priority_sum)
+
+#initialize
+triple_split_data = np.zeros((len(data)//3,3), dtype='object')
+triple_result = np.zeros(len(data)//3, dtype='str')
+triple_priority_sum = 0
+
+#generate triples of input strings
+for i in np.arange(0,data.size-2,3):
+    triple_split_data[int(i/3),0] = data[i][:]
+    triple_split_data[int(i/3),1] = data[i+1][:]
+    triple_split_data[int(i/3),2] = data[i+2][:]
+
+#scan triple strings for equal item
+for i in np.arange(0,triple_split_data[:,0].size,1):
+    for j in np.arange(0,int(len(triple_split_data[i,0])),1):
+        for k in np.arange(0,int(len(triple_split_data[i,1])),1):
+            for l in np.arange(0,int(len(triple_split_data[i,2])),1):
+                if triple_split_data[i,0][j] == triple_split_data[i,1][k] == triple_split_data[i,2][l]:
+                    triple_result[i] = triple_split_data[i,0][j]
+
+#calculate and show priority ranking
+for i in np.arange(0,triple_split_data[:,0].size,1):
+    triple_priority_sum = triple_priority_sum + value_scores[triple_result[i]]
+print(triple_priority_sum)
