@@ -13,7 +13,7 @@ temp = 0
 final = np.zeros(1)
 
 #scan array for zero-interrupted sum
-for i in np.arange(0,input.size,1):
+while i < input.size:
     if input[i] == 0:
         final = np.append(final, temp)
         temp = 0
