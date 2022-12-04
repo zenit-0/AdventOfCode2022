@@ -8,7 +8,7 @@ Created on Sun Dec  4 08:50:58 2022
 import numpy as np
 
 #initialize
-data = np.loadtxt("input.txt", dtype='str')
+data = np.loadtxt("data.txt", dtype='str')
 split_data = np.zeros((len(data),2), dtype='object')
 result = np.zeros(len(data), dtype='str')
 priority_sum = 0
