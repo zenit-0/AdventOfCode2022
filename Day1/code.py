@@ -8,17 +8,17 @@ Created on Wed Jul 13 20:48:20 2022
 import numpy as np
 
 #initialize (loadfile has been changed to have zeroes instead of empty spaces)
-input = np.loadtxt("input.txt", unpack=True)
+data = np.loadtxt("data.txt", unpack=True)
 temp = 0
 final = np.zeros(1)
 
 #scan array for zero-interrupted sum
-while i < input.size:
-    if input[i] == 0:
+while i < data.size:
+    if data[i] == 0:
         final = np.append(final, temp)
         temp = 0
     else:
-        temp = temp + input[i]
+        temp = temp + data[i]
         i = i+1
         
 #find highest value in array
