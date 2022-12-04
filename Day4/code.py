@@ -2,7 +2,7 @@
 """
 Created on Sun Dec  4 14:40:58 2022
 
-@author: gbald
+@author: zenit-0
 """
 
 import numpy as np
@@ -42,8 +42,8 @@ print(count_wrong)
     
     or
     
-    n_1-------------n_2
-            N_1------------N_2
+                n_1-------------n_2
+    N_1---------------N_2
     
     N_1 can overlap with n_2 in the first one and N_2 can overlap with n_1 in the second one
     
