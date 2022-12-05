@@ -53,7 +53,7 @@ positions = [['H', 'B', 'V', 'W', 'N', 'M', 'L', 'P'],
 real_result = []
 
 """move crates around in stacks, when the arranging is complete the top item 
-from each stack is stored in naive_result and printed"""
+from each stack is stored in real_result and printed"""
 for i in np.arange(0, data2[:,0].size, 1):
     crates_to_move = positions[instructions[i,1]-1][-instructions[i,0]:]
     positions[instructions[i,2]-1] = positions[instructions[i,2]-1] + crates_to_move
